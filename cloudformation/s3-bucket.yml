@@ -4,8 +4,8 @@ Description: 'S3 bucket for our CICD PR'
 Parameters:
   Environment:
     Type: String
-    Dafault: test
-    AllowdValues:
+    Default: test
+    AllowedValues:
       - test
       - staging
       - production
@@ -18,10 +18,10 @@ Resources:
       Tags:
         - Key: Environment
           Value: !Ref Environment
-        - Key: Environment
+        - Key: Project
           Value: GithubActionsTesting1
 
-  Outputs:  
-    BucketName:
-      Description: 'Name of created S3 Bucket'
-      Value: !Ref MyS3Bucket
+Outputs:
+  BucketName:
+    Description: 'Name of created S3 Bucket'
+    Value: !Ref MyS3Bucket
